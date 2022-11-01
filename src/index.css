@@ -1,13 +1,786 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  height: 4rem;
+}
+
+.wrapper{
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(255, 245, 245);
+}
+
+/* HEADER LEFT PART */
+
+.left{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.language{
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.searchCon{
+  border: .5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 1.2rem;
+  padding: .3rem;
+  width: 90%;
+  height: 100%;
+  border-radius: .3rem;
+}
+
+.inputBox{
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  caret-color: rgb(247, 136, 96);
+}
+
+.inputBox:focus{
+  outline: none;
+}
+
+/* HEADER LEFT PART ENDS */
+
+/* HEADER CENTER PART */
+
+.center{
+  flex: 1;
+  text-align: center;
+}
+
+.logo{
+  font-weight: bold;
+  text-align: center;
+}
+
+/* HEADER CENTER PART ENDS */
+
+.right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menuItem{
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 1.3rem;
+}
+
+/* STYLING FOR HEADER ICONS */
+/* .bx{
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4rem;
+} */
+
+.secondCon{
+  height: 2.5rem;
+  background-color: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+
+/* SLIDER */
+
+.sliderCon{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.arrow{
+    width: 100%;
+    opacity: .7;
+    z-index: 2;
+    position: absolute;
+}
+
+.arrow .left-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.right-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.arrow .bx{
+  color: rgb(56, 54, 54);
+  font-size: 6rem;
+}
+
+.slideWrapper{
+  height: 100%;
+  display: flex;
+  width: auto;
+  transform: translateX(0vw);
+}
+
+.slide{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.imageCon{
+  height: 100%;
+  flex: 1;
+}
+
+img{
+  height: 80%;
+  margin-top: 3rem;
+  box-shadow: 3px 8px 3px 2px rgb(131, 128, 128);
+  border-radius: 1rem;
+}
+
+.infoCon{
+  flex: 1;
+  padding: 4.5rem;
+}
+
+.infoCon h1{
+  font-size: 4rem;
+  color: teal;
+  letter-spacing: 2px;
+  text-shadow: 2px 3px 2px rgb(31, 53, 53);
+}
+
+.infoCon p{
+  margin: 4rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.infoCon button{
+  padding: 1rem;
+  font-size: 1.3rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: .5rem;
+  color: aliceblue;
+  transition: all .5s ease;
+}
+
+.infoCon button:hover{
+  background-color: teal;
+  color: #e9f5f5;
+  border: none;
+}
+
+
+/* CATEGORIES */
+.categoriesCon{
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.categoriesCon .info{
+  background: red;
+}
+
+.categoriesCont{
+ flex: 1;
+ margin: 1rem;
+ height: 70vh;
+ position: relative;
+}
+
+.categoriesCont .image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoriesCont .infoCon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.categoriesCont .title{
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+.categoriesCont button{
+  border: none;
+  padding: 1rem;
+  background-color: white;
+  color: gray;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* PRODUCT */
+
+.productCont{
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.productCon{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .3rem;
+  min-width: 18rem;
+  height: 22rem;
+  background-color: #f5fbfd;
+  position: relative;
+
+}
+.productCon .circle{
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+
+.productCon .image{
+  height: 75%;
+  z-index: 2;
+}
+
+.productCon .infoCon{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.productCon .infoCon:hover{
+  opacity: 1;
+}
+
+.productCon .icons{
+  color: aliceblue;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .3rem;
+  transition: all .5s ease;
+}
+
+.productCon .icons:hover{
+  background-color: #e9f5f5;
+  transform: scale(1.1);
+}
+
+.productCon .bx{
+  color: red;
+}
+
+
+/* NEWSLETTER */
+
+.newsCon{
+  height: 60vh;
+  background-color: #e9f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.newsCon .newsTitle{
+  font-size: 4rem;
+  margin: 1.2rem;
+}
+
+.newsCon .newsDesc{
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.newsCon .inputCon{
+  width: 50%;
+  height: 3.3rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgray;
+}
+
+.newsCon input{
+  flex: 8;
+  border: none;
+  padding-left: 1.2rem;
+}
+
+.newsCon button{
+  flex: 2;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-size: 2rem;
+}
+
+/* FOOTER */
+.footerCon{
+  display: flex;
+}
+
+.footerCon .footerLeft{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.footerLeft .logo{
+  color: teal;
+}
+
+.footerCon .socialCon{
+  display: flex;
+}
+
+.footerCon .desc{
+  margin: 1.2rem 0;
+  font-size: 1.2rem;
+}
+
+
+.footerCon .socialIcon{
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+  
+  .footerCon .footerCenter{
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .footerCenter h3{
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+    font-size: 2em;
+    color: teal;
+  }
+
+  .footerCenter ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footerCenter li{
+    width: 50%;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    transition: all .2s ease;
+  }
+
+  .footerCenter li:hover{
+    cursor: pointer;
+    border-bottom: 2px solid rgb(118, 231, 231);
+  }
+  
+  .footerCon .footerRight{
+    flex: 1;
+    padding: 1.2rem;
+  }
+
+  .footerRight h3{
+      font-size: 2rem;
+      color: teal;
+  }
+
+  .footerRight .contact-item{
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    font-size: 1.2em;
+  }
+
+  .footerRight i{
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: black;
+  }
+
+  .footerRight img{
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-radius: 0 !important;
+  }
+
+.copyCon{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.productListCon .filterCon{
+  display: flex;
+  justify-content: space-between;
+}
+.productListCon .title{
+  margin: 1.2rem;
+}
+
+.productListCon .filter{
+  margin: 1.2rem;
+}
+
+.productListCon .filterText{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 1.3rem;
+}
+
+.productListCon .filterCon select{
+  padding: .5rem;
+  margin-right: 1.3rem;
+}
+
+.productContainer .productWrapper{
+  padding: 3rem;
+  display: flex;
+}
+
+.productContainer .productWrapper .imageCon{
+  flex: 1;
+}
+
+.productContainer .productWrapper .infoCon{
+  flex: 1;
+  padding: 0px 3rem;
+}
+
+.productContainer .productWrapper .imageCon img{
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.productContainer .productWrapper .title{
+  font-weight: 200;
+}
+
+.productWrapper .desc{
+  margin: 2rem 0;
+}
+
+.productWrapper span{
+  font-weight: 400;
+  font-size: 2.1rem;
+}
+
+.productWrapper .filterCon{
+  margin: 2.3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productWrapper .filter{
+  display: flex;
+  align-items: center;
+}
+
+.productWrapper .filter .title{
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: rgb(76, 77, 77);
+}
+
+.productWrapper .filterColor{
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  margin: 0 .3rem;
+  cursor: pointer;
+}
+
+.productWrapper .red{
+  background-color: #ff0000;
+}
+.productWrapper .black{
+  background-color: rgb(0, 0, 0);
+}
+
+.productWrapper .blue{
+  background-color: #0000ff;
+}
+
+.productWrapper .filter select{
+  margin-left: 1rem;
+  padding: .3rem;
+}
+
+.registerCon{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+rgba(216, 174, 174, 0.5), 
+  rgba(95, 76, 76, 0.5)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerCon .wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem;
+  width: 50%;
+  background-color: #ffffff;
+}
+
+.registerCon .wrapper .title{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.registerCon form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.registerCon input{
+  flex: 1;
+  min-width: 40%;
+  margin: 1.5rem 1rem 0 0;
+  padding: .6rem;
+}
+
+.registerCon .agreement{
+  font-size: 1rem;
+  margin: 1.3rem 0;
+}
+
+.registerCon button{
+  width: 40%;
+  border: none;
+  padding: 1rem 1.4rem;
+  background-color: teal;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: .3rem;
+}
+
+.registerCon .btt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.registerCon .link{
+  cursor: pointer;
+  margin-top: .4rem;
+}
+
+.registerCon .wrapper2 form{
+    display: flex;
+    flex-direction: column;
+}
+
+.cartCon .cartWrapper{
+  padding: 1.4rem;
+} 
+
+.cartCon .title{
+  font-weight: 300;
+  text-align: center;
+}
+.cartCon .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem;
+}
+
+.cartCon .top button{
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cartCon .cartWrapper .topText{
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.cartCon .cartWrapper button:nth-child(1){
+  border: 2px solid #000;
+}
+.cartCon .cartWrapper .btn1{
+  background-color: #000;
+  color: #ffffff;
+}
+
+.cartCon .bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartCon .bottom .info{
+  flex: 3;
+}
+
+.cartCon .bottom .summary{
+  flex: 1;
+}
+
+.cartWrapper .product{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartWrapper .productDetail{
+  flex: 2;
+  display: flex;
+}
+
+.cartWrapper .priceDetail{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartWrapper img{
+  width: 200px;
+}
+
+.cartWrapper .details{
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cartWrapper .productColor{
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #a32a2a;
+}
+
+.cartWrapper .productAmountCon{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.cartWrapper .productAmount{
+  font-size: 1.4rem;
+  margin: .5rem;
+}
+
+.cartWrapper .productPrice{
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.cartWrapper hr{
+  background-color: #eee;
+  border: none;
+  margin-top: 2rem;
+  height: 2px;
+}
+
+.bottom .summary {
+  flex: 1;
+  border: .3rem solid lightgray;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  height: 50vh;
+}
+
+.bottom .summary .summaryTitle{
+  font-weight: 200;
+}
+
+.bottom .summary .summaryItem{
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom .summary .summaryItem .total{
+  font-weight: 600;
+}
+
+.bottom .summary button{
+  width: 100%;
+  padding: 1rem;
+  background-color: #000;
+  color: #ffffff;
+  font-weight: 600;
 }
